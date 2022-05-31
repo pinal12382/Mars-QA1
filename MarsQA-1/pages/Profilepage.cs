@@ -10,12 +10,13 @@ using System.Threading.Tasks;
 
 namespace MarsQA_1.pages
 {
-    internal class Profilepage
+     internal class Profilepage
     {
         public void CreateProfile(IWebDriver driver)
         {
             // create Profile
             // Add decription
+
             IWebElement descriptionButton = driver.FindElement(By.XPath("//div/section[2]/div/div/div/div[3]/div/div/div/h3/span/i"));
             descriptionButton.Click();
                  
@@ -222,7 +223,7 @@ UpdateskillButton.Click();
 
 
 
-public  void DeleteProfile(IWebDriver driver,string description,string language,string skill)
+public  void DeleteProfile(IWebDriver driver)
 {
 // Delete Description
 

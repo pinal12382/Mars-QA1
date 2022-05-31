@@ -72,23 +72,23 @@ namespace MarsQA_1.StepDefinitions
             Assert.That(editedskilllevel == p4, "Actual skilllevel and expected skilllevel did not match");
         }
 
-        [When(@"I deleted Edited profile record '([^']*)','([^']*)','([^']*)' in the profile page")]
-        public void WhenIDeletedEditedProfileRecordInTheProfilePage(string p0, string p1, string p3)
+        [When(@"I deleted Edited profile record in the profile page")]
+        public void WhenIDeletedEditedProfileRecordInTheProfilePage()
         {
             Profilepage Profilepageobj = new Profilepage();
-            Profilepageobj.DeleteProfile(driver,p0,p1,p3);
+            Profilepageobj.DeleteProfile(driver);
         }
 
         [Then(@"Edited record shold be deleted succssfully")]
-        public void ThenEditedRecordSholdBeDeletedSuccssfully(string p0, string p1, string p3)
+        public void ThenEditedRecordSholdBeDeletedSuccssfully()
         {
             string deleteeditedDescription = Profilepageobj.deleteDescription(driver);
             string deleteditedlanguage = Profilepageobj.deletelangeage(driver);
             string deletededitedSkill = Profilepageobj.deleteSkill(driver);
 
-            Assert.That(deleteeditedDescription != p0, "Description should not be deleted");
-            Assert.That(deleteditedlanguage != p1, "Language should not be deleted");
-            Assert.That(deletededitedSkill != p3, "Skill should not be deleted");
+            Assert.That(deleteeditedDescription != "Edited Description", "Description should not be deleted");
+            Assert.That(deleteditedlanguage != "Hindi", "Language should not be deleted");
+            Assert.That(deletededitedSkill != "Edited Skill", "Skill should not be deleted");
         }
 
 

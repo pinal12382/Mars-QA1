@@ -161,8 +161,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("I logged in to localhost sucessfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 23
- testRunner.When("I deleted Edited profile record \'<Description>\',\'<Language>\',\'<Skill>\' in the pro" +
-                        "file page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I deleted Edited profile record in the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 24
  testRunner.Then("Edited record shold be deleted succssfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

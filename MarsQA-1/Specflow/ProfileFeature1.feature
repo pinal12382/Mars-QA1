@@ -20,5 +20,5 @@ Scenario Outline: Edit Profile with valid details
 
 Scenario: Delete Edited profile record 
 	Given I logged in to localhost sucessfully
-	When I deleted Edited profile record '<Description>','<Language>','<Skill>' in the profile page
+	When I deleted Edited profile record in the profile page
 	Then Edited record shold be deleted succssfully
