@@ -64,28 +64,39 @@ namespace MarsQA_1.StepDefinitions
             string editedlanguagelevel = Profilepageobj.Geteditedlanguagelevel(driver);
             string editedskill = Profilepageobj.GeteditedSkill(driver);
             string editedskilllevel = Profilepageobj.GeteditedSkillLevel(driver);
+
             Assert.That(editeddescription == p0, "Actual description and expected description did not match");
             Assert.That(editedlanguage == p1, "Actual language and expected language did not match");
             Assert.That(editedlanguagelevel == p2, "Actual languagelevel and expected languagelevel did not match");
             Assert.That(editedskilllevel == p3, "Actual skill and expected skill did not match");
             Assert.That(editedskilllevel == p4, "Actual skilllevel and expected skilllevel did not match");
         }
-        [When(@"I delete edited profile record")]
-        public void WhenIDeleteEditedProfileRecord()
+
+        [When(@"I deleted Edited profile record '([^']*)','([^']*)','([^']*)' in the profile page")]
+        public void WhenIDeletedEditedProfileRecordInTheProfilePage(string p0, string p1, string p3)
         {
             Profilepage Profilepageobj = new Profilepage();
-            Profilepageobj.DeleteProfile(driver);
+            Profilepageobj.DeleteProfile(driver,p0,p1,p3);
         }
 
         [Then(@"Edited record shold be deleted succssfully")]
-        public void ThenEditedRecordSholdBeDeletedSuccssfully()
+        public void ThenEditedRecordSholdBeDeletedSuccssfully(string p0, string p1, string p3)
         {
-            string deleteditedlanguage = Profilepageobj.deleteLanguage(driver);
-
+            string deleteeditedDescription = Profilepageobj.deleteDescription(driver);
+            string deleteditedlanguage = Profilepageobj.deletelangeage(driver);
             string deletededitedSkill = Profilepageobj.deleteSkill(driver);
 
-            
+            Assert.That(deleteeditedDescription != p0, "Description should not be deleted");
+            Assert.That(deleteditedlanguage != p1, "Language should not be deleted");
+            Assert.That(deletededitedSkill != p3, "Skill should not be deleted");
         }
+
+
+
+        
+
+            
+        
 
 
     }

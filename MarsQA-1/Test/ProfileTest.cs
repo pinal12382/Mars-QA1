@@ -35,7 +35,7 @@ namespace MarsQA_1.Test
         {
             //Detete Profile
             Profilepage Profilepageobj = new Profilepage();
-            Profilepageobj.DeleteProfile(driver);
+            Profilepageobj.DeleteProfile(driver,"dummy5","dummy6","dummy7");
 
         }
         

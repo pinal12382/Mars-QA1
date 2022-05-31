@@ -196,7 +196,7 @@ UpdateskillButton.Click();
 
     public string GeteditedDescription(IWebDriver driver)
     {
-    IWebElement createDescription = driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/div/div/div/span"));
+    IWebElement createDescription = driver.FindElement(By.XPath("//div/section[2]/div/div/div/div[3]/div/div/div/span"));
     return createDescription.Text;
     }
     public string Geteditedlanguage(IWebDriver driver)
@@ -222,7 +222,7 @@ UpdateskillButton.Click();
 
 
 
-public  void DeleteProfile(IWebDriver driver)
+public  void DeleteProfile(IWebDriver driver,string description,string language,string skill)
 {
 // Delete Description
 
@@ -242,20 +242,38 @@ CleardescTextArea.Clear();
 IWebElement languageTab = driver.FindElement(By.XPath("//div/section[2]/div/div/div/div[3]/form/div[1]/a[1]"));
 languageTab.Click();
 
-IWebElement Removelang = driver.FindElement(By.XPath("//div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td[3]/span[2]/i"));
-Removelang.Click();
+     IWebElement Removelang = driver.FindElement(By.XPath("//div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td[3]/span[2]/i"));
+     Removelang.Click();
 
+ 
 
-// Delete Skill
+            // Delete Skill
 
-IWebElement SkillTab = driver.FindElement(By.XPath("//div/section[2]/div/div/div/div[3]/form/div[1]/a[2]"));
-SkillTab.Click();
+            IWebElement SkillTab = driver.FindElement(By.XPath("//div/section[2]/div/div/div/div[3]/form/div[1]/a[2]"));
+            SkillTab.Click();
 
-IWebElement RemoveSkill = driver.FindElement(By.XPath("//div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody[last()]/tr/td[3]/span[2]/i"));
-RemoveSkill.Click();
+           IWebElement RemoveSkill = driver.FindElement(By.XPath("//div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody[last()]/tr/td[3]/span[2]/i"));
+            RemoveSkill.Click();
 
+              }
+        // Asserstion 
 
+        public string deleteDescription(IWebDriver driver)
+        {
+            IWebElement clearDescription = driver.FindElement(By.XPath("//div/section[2]/div/div/div/div[3]/div/div/div/span"));
+            return clearDescription.Text;
+        } 
+        public string deletelangeage(IWebDriver driver)
+        {
+                        IWebElement clearLanguage = driver.FindElement(By.XPath("//div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody[last()]/tr/td[1]"));
+            return clearLanguage.Text;
+        }
 
-}
-}
+        public string deleteSkill(IWebDriver driver)
+        {
+            IWebElement clearSkill = driver.FindElement(By.XPath("//div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody[last()]/tr/td[2]"));
+            return clearSkill.Text;
+
+        }
+    }
 }
