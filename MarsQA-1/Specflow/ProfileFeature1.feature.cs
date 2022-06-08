@@ -107,15 +107,15 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Edit Profile with valid details")]
         [NUnit.Framework.TestCaseAttribute("Edited Description", "Hindi", "Native", "Edited Skill", "Expert", null)]
-        public void EditProfileWithValidDetails(string description, string language, string language_Level, string skill, string skill_Level, string[] exampleTags)
+        public void EditProfileWithValidDetails(string description, string language, string languagelevel, string skill, string skilllevel, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("Description", description);
             argumentsOfScenario.Add("Language", language);
-            argumentsOfScenario.Add("Language-level", language_Level);
+            argumentsOfScenario.Add("Languagelevel", languagelevel);
             argumentsOfScenario.Add("Skill", skill);
-            argumentsOfScenario.Add("Skill-level", skill_Level);
+            argumentsOfScenario.Add("Skilllevel", skilllevel);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Edit Profile with valid details", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 13
 this.ScenarioInitialize(scenarioInfo);
@@ -131,10 +131,10 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("I logged in to localhost sucessfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 15
- testRunner.When(string.Format("I update a New \'{0}\',\'{1}\',\'{2}\',\'{3}\',\'{4}\' in profile page", description, language, language_Level, skill, skill_Level), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("I update a New \'{0}\',\'{1}\',\'{2}\',\'{3}\',\'{4}\' in profile page", description, language, languagelevel, skill, skilllevel), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 16
- testRunner.Then(string.Format("The Record should be upaded \'{0}\',\'{1}\',\'{2}\',\'{3}\',\'{4}\' in the profile page", description, language, language_Level, skill, skill_Level), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("The Record should be upaded \'{0}\',\'{1}\',\'{2}\',\'{3}\',\'{4}\' in the profile page", description, language, languagelevel, skill, skilllevel), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

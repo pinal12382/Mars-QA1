@@ -28,7 +28,7 @@ namespace MarsQA_1.Test
         {
             //Edit Profile
             Profilepage Profilepageobj = new Profilepage();
-            Profilepageobj.EditProfile(driver,"dummy","dummy1","dummy2","dummy3","dummy4");
+            Profilepageobj.EditProfile(driver, "Edited ", "Hindi", "Native","Edited Skill","Expert");
         }
         [Test,Order (3)]
         public void DeleteProfile_Test()

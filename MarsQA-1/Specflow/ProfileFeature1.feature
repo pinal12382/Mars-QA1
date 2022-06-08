@@ -12,10 +12,10 @@ Scenario: Create new profile record with valid detail
 
 Scenario Outline: Edit Profile with valid details
 	Given I logged in to localhost sucessfully
-	When  I update a New '<Description>','<Language>','<Language-level>','<Skill>','<Skill-level>' in profile page
-	Then  The Record should be upaded '<Description>','<Language>','<Language-level>','<Skill>','<Skill-level>' in the profile page
+	When  I update a New '<Description>','<Language>','<Languagelevel>','<Skill>','<Skilllevel>' in profile page
+	Then  The Record should be upaded '<Description>','<Language>','<Languagelevel>','<Skill>','<Skilllevel>' in the profile page
 	Examples:
-	| Description        | Language | Language-level | Skill        | Skill-level |
+	| Description        | Language | Languagelevel | Skill        | Skilllevel |
 	| Edited Description | Hindi    | Native         | Edited Skill | Expert      |
 
 Scenario: Delete Edited profile record 
