@@ -34,9 +34,9 @@ namespace MarsQA_1.pages
             // click on save Button
             IWebElement SaveButton = driver.FindElement(By.XPath("//div/section[2]/div/div/div/div[3]/div/div/form/div/div/div[2]/button"));
             SaveButton.Click();
-            Thread.Sleep(2000);
+           // Thread.Sleep(2000);
 
-            //Wait.waitforwebElement(driver, "XPath", "//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[1]/a[1]",5);
+            Wait.waitforwebElement(driver, "XPath","//div/section[2]/div/div/div/div[3]/form/div[1]/a[1]",5);
 
 
             // Add language
