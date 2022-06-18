@@ -15,6 +15,8 @@ namespace MarsQA_1.Utilities
         public  IWebDriver driver;
 
         [OneTimeSetUp]
+
+       
         public void SignInfunction()
         {
             // open chrome browser
@@ -24,8 +26,8 @@ namespace MarsQA_1.Utilities
 
             //signInpage object initilization and definition
 
-            SignInpage SignInpageobj = new SignInpage();
-            SignInpageobj.SignInsteps(driver);
+            SignInpage SignInpageobj = new SignInpage(driver);
+            SignInpageobj.addlogindetail();
 
 
         }

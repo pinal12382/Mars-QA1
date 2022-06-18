@@ -1,4 +1,5 @@
 ﻿using MarsQA_1.pages;
+using MarsQA_1.ProfilePage;
 using MarsQA_1.Utilities;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -10,7 +11,7 @@ namespace MarsQA_1.Test
     
 {
     [TestFixture]
-    internal class ProfileTest: CommonDriver
+   internal class ProfileTest: CommonDriver
     {
         
              
@@ -18,24 +19,26 @@ namespace MarsQA_1.Test
         public void CreateProfile_Test()
         {
             //Profilepage object initilization and definition
+            Homepage Homepageobj = new Homepage (driver);
+            Homepageobj.Signin();
+                        
+            Managedescription managedescriptionobj = new Managedescription(driver);
+            managedescriptionobj.addDesc();
 
-            Profilepage Profilepageobj = new Profilepage();
-            Profilepageobj.CreateProfile(driver);
+                     }
 
-        }
-        [Test,Order (2)]
+        [Test, Order(2)]
         public void EditProfile_Test()
         {
-            //Edit Profile
-            Profilepage Profilepageobj = new Profilepage();
-            Profilepageobj.EditProfile(driver,"dummy","dummy1","dummy2","dummy3","dummy4");
+            Managedescription managedescriptionobj = new Managedescription(driver);
+            managedescriptionobj.editDesc();
+
         }
-        [Test,Order (3)]
-        public void DeleteProfile_Test()
+            [Test,Order (3)]
+        public void deleteDescription_Test()
         {
-            //Detete Profile
-            Profilepage Profilepageobj = new Profilepage();
-            Profilepageobj.DeleteProfile(driver);
+            Managedescription managedescriptionobj = new Managedescription(driver);
+            managedescriptionobj.delDesc();
 
         }
         
