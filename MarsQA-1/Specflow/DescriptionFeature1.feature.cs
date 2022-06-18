@@ -75,6 +75,7 @@ namespace MarsQA_1.Specflow
         }
         
         [NUnit.Framework.TestAttribute()]
+<<<<<<< HEAD:MarsQA-1/Specflow/DescriptionFeature1.feature.cs
         [NUnit.Framework.DescriptionAttribute("[Create new description record with valid detail]")]
         public void CreateNewDescriptionRecordWithValidDetail()
         {
@@ -82,6 +83,15 @@ namespace MarsQA_1.Specflow
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("[Create new description record with valid detail]", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 9
+=======
+        [NUnit.Framework.DescriptionAttribute("01 Create new profile record with valid detail")]
+        public void _01CreateNewProfileRecordWithValidDetail()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("01 Create new profile record with valid detail", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 8
+>>>>>>> 8c08426825bf967a6afda9b38a385f16e3ec186a:MarsQA-1/Specflow/ProfileFeature1.feature.cs
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -105,6 +115,7 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
+<<<<<<< HEAD:MarsQA-1/Specflow/DescriptionFeature1.feature.cs
         [NUnit.Framework.DescriptionAttribute("[Edit new description record with valid detail]")]
         public void EditNewDescriptionRecordWithValidDetail()
         {
@@ -112,6 +123,51 @@ this.ScenarioInitialize(scenarioInfo);
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("[Edit new description record with valid detail]", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 14
+=======
+        [NUnit.Framework.DescriptionAttribute("02 Edit Profile with valid details")]
+        [NUnit.Framework.TestCaseAttribute("Edited Description", "Hindi", "Native", "Edited Skill", "Expert", null)]
+        public void _02EditProfileWithValidDetails(string description, string language, string languagelevel, string skill, string skilllevel, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("Description", description);
+            argumentsOfScenario.Add("Language", language);
+            argumentsOfScenario.Add("Languagelevel", languagelevel);
+            argumentsOfScenario.Add("Skill", skill);
+            argumentsOfScenario.Add("Skilllevel", skilllevel);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("02 Edit Profile with valid details", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 13
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 14
+ testRunner.Given("I logged in to localhost sucessfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 15
+ testRunner.When(string.Format("I update a New \'{0}\',\'{1}\',\'{2}\',\'{3}\',\'{4}\' in profile page", description, language, languagelevel, skill, skilllevel), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 16
+ testRunner.Then(string.Format("The Record should be upaded \'{0}\',\'{1}\',\'{2}\',\'{3}\',\'{4}\' in the profile page", description, language, languagelevel, skill, skilllevel), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("03 Delete Edited profile record")]
+        public void _03DeleteEditedProfileRecord()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("03 Delete Edited profile record", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 21
+>>>>>>> 8c08426825bf967a6afda9b38a385f16e3ec186a:MarsQA-1/Specflow/ProfileFeature1.feature.cs
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))

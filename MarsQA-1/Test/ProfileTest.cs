@@ -30,9 +30,15 @@ namespace MarsQA_1.Test
         [Test, Order(2)]
         public void EditProfile_Test()
         {
+<<<<<<< HEAD
             Managedescription managedescriptionobj = new Managedescription(driver);
             managedescriptionobj.editDesc();
 
+=======
+            //Edit Profile
+            Profilepage Profilepageobj = new Profilepage();
+            Profilepageobj.EditProfile(driver, "Edited ", "Hindi", "Native","Edited Skill","Expert");
+>>>>>>> 8c08426825bf967a6afda9b38a385f16e3ec186a
         }
             [Test,Order (3)]
         public void deleteDescription_Test()
