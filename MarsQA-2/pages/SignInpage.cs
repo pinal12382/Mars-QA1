@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using MarsQA_1.Utilities;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using SeleniumExtras.PageObjects;
@@ -13,12 +14,8 @@ namespace MarsQA_1.pages
 {
     public  class SignInpage
     {
-              
 
         IWebDriver driver;
-        
-       
-            
         [FindsBy(How = How.XPath,Using = "/html/body/div[2]/div/div/div[1]/div/div[1]/input")]
         public IWebElement Emailtxtbox { get; set; }
 
@@ -27,12 +24,12 @@ namespace MarsQA_1.pages
         public IWebElement PasswordtxtBox { get; set; }
 
         [FindsBy(How = How.XPath,Using = "/html/body/div[2]/div/div/div[1]/div/div[4]/button")]
-       public IWebElement loginBtn { get; set; }
+       public IWebElement LoginBtn { get; set; }
 
 
-        public SignInpage(IWebDriver _driver)
+        public SignInpage(IWebDriver driver)
         {
-            driver = _driver;
+            this.driver = driver;
             PageFactory.InitElements(driver,this);
         }
         public void addlogindetail()
@@ -45,7 +42,7 @@ namespace MarsQA_1.pages
         }
         public void login()
         {
-            loginBtn.Click();
+            LoginBtn.Click();
             Thread.Sleep(2000);
         }
 

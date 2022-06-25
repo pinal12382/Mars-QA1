@@ -19,7 +19,9 @@ namespace MarsQA_1.StepDefinitions
         public void GivenILoggedInToLocalhostSucessfully()
         {
             // open chrome browser
+
             driver = new ChromeDriver();
+
             driver.Navigate().GoToUrl("http://localhost:5000/");
             driver.Manage().Window.Maximize();
 
@@ -49,8 +51,8 @@ namespace MarsQA_1.StepDefinitions
         {
             Managedescription managedescriptionobj = new Managedescription(driver);
 
-
             Assert.IsTrue(managedescriptionobj.GetDescription().Contains("Hi I am Pinal"));
+
         }
         [Then(@"Close the Browser")]
         public void ThenCloseTheBrowser()

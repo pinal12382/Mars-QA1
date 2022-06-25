@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using MarsQA_1.Utilities;
+using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 using System;
 using System.Collections.Generic;
@@ -15,38 +16,61 @@ namespace MarsQA_1.ProfilePage
 
         // Add Language
 
-        [FindsBy(How = How.XPath,Using = "//div/section[2]/div/div/div/div[3]/form/div[1]/a[1]")]
+        [FindsBy(How = How.XPath, Using = "//div/section[2]/div/div/div/div[3]/form/div[1]/a[1]")]
         public IWebElement languageTab { get; set; }
 
-        [FindsBy(How = How.XPath,Using = "//div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/thead/tr/th[3]/div" )]
+        [FindsBy(How = How.XPath, Using = "//div/div/div/div[3]/form/div[2]/div/div[2]/div/table/thead/tr/th[3]/div")]
         public IWebElement addNewbutton { get; set; }
 
-        [FindsBy(How = How.XPath,Using = "//div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/div/div[1]/input")]
+        [FindsBy(How = How.XPath, Using = "//div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/div/div[1]/input")]
         public IWebElement langTextbox { get; set; }
 
-        [FindsBy(How = How.XPath,Using = "//div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/div/div[2]/select")]
+        [FindsBy(How = How.XPath, Using = "//div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/div/div[2]/select")]
         public IWebElement langlevelDropdown { get; set; }
 
-        [FindsBy(How=How.XPath,Using = "//div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/div/div[3]/input[1]")]
+        [FindsBy(How = How.XPath, Using = "//div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/div/div[3]/input[1]")]
         public IWebElement addButton { get; set; }
 
         // Edit language
 
 
+        [FindsBy(How = How.XPath, Using = "//div/section[2]/div/div/div/div[3]/form/div[1]/a[1]")]
+        public IWebElement editlanguageTab { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody[last()]/tr/td[3]/span[1]/i")]
+        public IWebElement editlanguageBtn { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody[last()]/tr/td/div/div[1]/input")]
+        public IWebElement editlangtxt { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td/div/div[2]/select")]
+        public IWebElement editlanglvlDropdown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td/div/span/input[1]")]
+        public IWebElement updateButton { get; set; }
+
+        // Delete Language
+
+        [FindsBy(How = How.XPath, Using = "//div/section[2]/div/div/div/div[3]/form/div[1]/a[1]")]
+        public IWebElement dellanTab { get; set; }
+
+
+        [FindsBy(How = How.XPath, Using = "//div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td[3]/span[2]/i")]
+        public IWebElement Removelang { get; set; }
 
 
         public Managelanguage(IWebDriver driver)
         {
             this.driver = driver;
-            PageFactory.InitElements(driver, this);
-
+            PageFactory.InitElements(CommonDriver.driver, this);
         }
+
         public void addLanguage() 
         {
-            languageTab.Click();
-            addNewbutton.Click();
 
+            languageTab.Click();
+            Thread.Sleep(1000);
+            addNewbutton.Click();
             langTextbox.Click();
             langTextbox.Clear();
             langTextbox.SendKeys("English");
@@ -55,10 +79,61 @@ namespace MarsQA_1.ProfilePage
 
             langlevelDropdown.Click();
             langlevelDropdown.SendKeys("Fluent");
+            addButton.Click();
+
             Thread.Sleep(2000);
         }
 
-        
+        public void editLanguage()
+        {
+            editlanguageTab.Click();
+            editlanguageBtn.Click();
+
+            editlangtxt.Click();
+            editlangtxt.Clear();
+            editlangtxt.SendKeys("Hindi");
+
+            editlanglvlDropdown.Click();
+            editlanglvlDropdown.SendKeys("Native");
+
+            updateButton.Click();
+        }
+        public void deleteLanguage()
+        {
+            dellanTab.Click();
+            Removelang.Click();
+
+        }
+        public string GetLanguage()
+        {
+            Thread.Sleep(2000);
+            return driver.FindElement(By.XPath("//div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td[1]")).Text;
+
+        }
+        public string GetLanguagelevel() 
+        {
+            Thread.Sleep(2000);
+            return driver.FindElement(By.XPath("//div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td[2]")).Text;
+                   
+        }
+        public string GeteditedLanguage()
+        {
+            Thread.Sleep(2000);
+            return driver.FindElement(By.XPath("//div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody[last()]/tr/td[1]")).Text;
+            
+        }
+        public string GeteditedLanguagelevel()
+        {
+            Thread.Sleep(2000);
+            return driver.FindElement(By.XPath("//div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody[last()]/tr/td[2]")).Text;
+            
+        }
+        public string deletelang()
+        {
+            return driver.FindElement(By.XPath("//div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody[last()]/tr/td[1]")).Text;
+            
+        }
+
 
     }
 }

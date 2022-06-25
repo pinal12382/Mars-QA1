@@ -14,12 +14,12 @@ namespace MarsQA_1.pages
               
            IWebDriver driver;
         [FindsBy(How = How.XPath, Using = "//div/div/div[1]/div/a")]
-        public IWebElement signInbtn { get; set;}
+        public IWebElement SignInbtn { get; set;}
 
             public Homepage(IWebDriver driver)
             {
-                this.driver = driver;
-                PageFactory.InitElements(driver, this);
+               this.driver = driver;
+                PageFactory.InitElements(driver,this);
             }
             public void HomePageNavigate()
             {
@@ -29,8 +29,8 @@ namespace MarsQA_1.pages
             }
             public void Signin()
             {
-            Thread.Sleep(2000);
-            signInbtn.Click();
+            
+            SignInbtn.Click();
 
             }
         }
