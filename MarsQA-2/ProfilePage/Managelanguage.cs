@@ -81,8 +81,8 @@ namespace MarsQA_1.ProfilePage
             langlevelDropdown.Click();
             langlevelDropdown.SendKeys("Fluent");
             addButton.Click();
-
-            Thread.Sleep(2000);
+            Wait.ElementIsVisible(driver, "XPath", "//div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/div/div[3]/input[1]", 5);
+            //Thread.Sleep(2000);
         }
 
         public void editLanguage()

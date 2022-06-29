@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using MarsQA_1.Utilities;
+using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 using System;
 using System.Collections.Generic;
@@ -46,11 +47,13 @@ namespace MarsQA_1.ProfilePage
         public void addDesc()
         {
             descriptionButton.Click();
+            Thread.Sleep(1000);
             descriptionTextbox.Click();
             descriptionTextbox.Clear();
             descriptionTextbox.SendKeys("Hi I am Pinal");
             saveBtn.Click();
-            Thread.Sleep(2000);
+            //Thread.Sleep(2000);
+            Wait.ElementIsVisible(driver, "XPath","//div/section[2]/div/div/div/div[3]/div/div/form/div/div/div[2]/button",5);
         }
         public void editDesc()
         {

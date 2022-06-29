@@ -92,7 +92,8 @@ namespace MarsQA_1.ProfilePage
             skilllevelDropdown.SendKeys("Beginner");
             Thread.Sleep(1000);
             skillAddbutton.Click();
-            Thread.Sleep(1000);
+            Wait.ElementIsVisible(driver, "XPath", "//div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/div/span/input[1]",5);
+           // Thread.Sleep(1000);
 
 
         }

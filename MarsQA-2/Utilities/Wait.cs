@@ -11,7 +11,7 @@ namespace MarsQA_1.Utilities
 {
     internal class Wait
     {
-        public static void waitByClick(IWebDriver driver,string locator,string locatorValue, int second)
+        public static void ElementIsVisible(IWebDriver driver,string locator,string locatorValue, int second)
         {
             var wait = new WebDriverWait(driver,new TimeSpan(0,0,0,second));
            
