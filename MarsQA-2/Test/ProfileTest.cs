@@ -32,6 +32,10 @@ namespace MarsQA_1.Test
             Managelanguage managelanguageobj = new Managelanguage(driver);
             managelanguageobj.addLanguage();
 
+            Manageskill manageskillobj = new Manageskill(driver);
+            manageskillobj.Addskill();
+            
+
         }
 
         [Test, Order(2)]
@@ -49,6 +53,9 @@ namespace MarsQA_1.Test
             Managelanguage managelanguageobj = new Managelanguage(driver);
             managelanguageobj.editLanguage();
 
+            Manageskill manageskillobj = new Manageskill(driver);
+            manageskillobj.editSkill();
+
         }
             [Test,Order (3)]
         public void deleteDescription_Test()
@@ -64,6 +71,9 @@ namespace MarsQA_1.Test
 
             Managelanguage managelanguageobj = new Managelanguage(driver);
             managelanguageobj.deleteLanguage();
+
+            Manageskill manageskillobj = new Manageskill(driver);
+            manageskillobj.delSkill();
 
         }
         

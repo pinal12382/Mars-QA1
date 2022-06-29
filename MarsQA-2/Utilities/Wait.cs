@@ -11,25 +11,11 @@ namespace MarsQA_1.Utilities
 {
     internal class Wait
     {
-        public static void waitforwebElement(IWebDriver driver,string locator,string locatorValue,int second)
+        public static void waitByClick(IWebDriver driver,string locator,string locatorValue, int second)
         {
-            var wait = new WebDriverWait(driver,new TimeSpan(0,0,second));
-            if (locator== "XPath")
-            {
-                wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(locatorValue)));
-            }
-            if (locator=="ID")
-            {
-                wait.Until(ExpectedConditions.ElementIsVisible(By.Id(locatorValue)));
-            }
-            if (locator == "CssSelector")
-            {
-                wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(locatorValue)));
-
-            }
-
-
-            if (locator == "XPath")
+            var wait = new WebDriverWait(driver,new TimeSpan(0,0,0,second));
+           
+                        if (locator == "XPath")
             {
                 wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locatorValue)));
             }
@@ -41,6 +27,23 @@ namespace MarsQA_1.Utilities
             {
                 wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(locatorValue)));
             }
+
+
+            if (locator == "XPath")
+            {
+                wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(locatorValue)));
+            }
+            if (locator == "ID")
+            {
+                wait.Until(ExpectedConditions.ElementIsVisible(By.Id(locatorValue)));
+            }
+            if (locator == "CssSelector")
+            {
+                wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(locatorValue)));
+
+            }
+
+
 
 
         }

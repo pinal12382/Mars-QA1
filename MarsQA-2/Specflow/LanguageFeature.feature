@@ -1,4 +1,4 @@
-﻿Feature: Language
+﻿Feature: LanguageFeature
 
 A short summary of the feature
 

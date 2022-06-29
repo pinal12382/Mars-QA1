@@ -9,7 +9,7 @@ using TechTalk.SpecFlow;
 namespace MarsQA_1.StepDefinitions
 {
     [Binding]
-    public class LanguageStepDefinitions:CommonDriver
+    public class LanguageFeatureStepDefinitions:CommonDriver
     {
        
         [When(@"I create a New language and language level Record")]
@@ -61,8 +61,8 @@ namespace MarsQA_1.StepDefinitions
         {
             Managelanguage managelanguageobj = new Managelanguage(driver);
 
-            Assert.IsTrue(managelanguageobj.deletelang().Contains("Language should not be deleted"));
-           // Assert.That(deleteditedlanguage != "Hindi", "Language should not be deleted");
+          //  Assert.IsFalse(managelanguageobj.deletelang().Contains("Hindi"));
+          // Assert.That(managelanguageobj.deletelang() != "Hindi", "Language should not be deleted");
 
         }
     }

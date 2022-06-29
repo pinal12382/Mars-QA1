@@ -74,6 +74,7 @@ namespace MarsQA_1.ProfilePage
             langTextbox.Click();
             langTextbox.Clear();
             langTextbox.SendKeys("English");
+            Thread.Sleep(1000);
 
             // choose Level
 
@@ -97,11 +98,13 @@ namespace MarsQA_1.ProfilePage
             editlanglvlDropdown.SendKeys("Native");
 
             updateButton.Click();
+            Thread.Sleep(1000);
         }
         public void deleteLanguage()
         {
             dellanTab.Click();
             Removelang.Click();
+            Thread.Sleep(1000);
 
         }
         public string GetLanguage()
@@ -130,6 +133,7 @@ namespace MarsQA_1.ProfilePage
         }
         public string deletelang()
         {
+            Thread.Sleep(2000);
             return driver.FindElement(By.XPath("//div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody[last()]/tr/td[1]")).Text;
             
         }
