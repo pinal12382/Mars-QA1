@@ -12,7 +12,7 @@ namespace MarsQA_1.ProfilePage
 {
     public  class Manageskill
     {
-        IWebDriver driver;
+        public IWebDriver driver;
 
         // Click on skill button
 
@@ -74,7 +74,7 @@ namespace MarsQA_1.ProfilePage
             PageFactory.InitElements(driver, this);
         }
 
-        public void Addskill()
+        public void Addskill(IWebDriver driver)
         {
             SkillTab.Click();
             Thread.Sleep(1000);
@@ -97,7 +97,7 @@ namespace MarsQA_1.ProfilePage
 
 
         }
-        public void editSkill()
+        public void editSkill(IWebDriver driver)
         {
             editSkillTab.Click();
             Thread.Sleep(1000);
@@ -114,7 +114,7 @@ namespace MarsQA_1.ProfilePage
             Thread.Sleep(1000);
 
          }
-        public void delSkill()
+        public void delSkill(IWebDriver driver)
         {   
             delSkillTab.Click();
             Thread.Sleep(1000);

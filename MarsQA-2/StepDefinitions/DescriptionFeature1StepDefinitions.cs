@@ -28,11 +28,11 @@ namespace MarsQA_1.StepDefinitions
             //signInpage object initilization and definition
 
             Homepage HomePageobj = new Homepage(driver);
-            HomePageobj.Signin();
+            HomePageobj.Signin(driver);
 
             SignInpage SignInpageobj = new SignInpage(driver);
-            SignInpageobj.addlogindetail();
-            SignInpageobj.login();
+            SignInpageobj.addlogindetail(driver);
+            SignInpageobj.login(driver);
 
            
         }
@@ -42,7 +42,7 @@ namespace MarsQA_1.StepDefinitions
         public void WhenICreateANewDescriptionRecord()
         {
             Managedescription managedescriptionobj = new Managedescription(driver);
-            managedescriptionobj.addDesc();
+            managedescriptionobj.addDesc(driver);
 
         }
 
@@ -65,7 +65,7 @@ namespace MarsQA_1.StepDefinitions
         {
 
             Managedescription managedescriptionobj = new Managedescription(driver);
-            managedescriptionobj.editDesc();
+            managedescriptionobj.editDesc(driver);
 
            
 
@@ -81,7 +81,7 @@ namespace MarsQA_1.StepDefinitions
         public void WhenIDeleteANewDescriptionRecord()
         {
             Managedescription managedescriptionobj = new Managedescription(driver);
-            managedescriptionobj.delDesc();
+            managedescriptionobj.delDesc(driver);
 
         }
         [Then(@"New editeddescription record should be deleted successfully")]

@@ -12,7 +12,7 @@ namespace MarsQA_1.ProfilePage
 {
     public class Managelanguage
     {
-        IWebDriver driver;
+        public IWebDriver driver;
 
         // Add Language
 
@@ -65,7 +65,7 @@ namespace MarsQA_1.ProfilePage
             PageFactory.InitElements(CommonDriver.driver, this);
         }
 
-        public void addLanguage() 
+        public void addLanguage(IWebDriver driver) 
         {
 
             languageTab.Click();
@@ -85,7 +85,7 @@ namespace MarsQA_1.ProfilePage
             //Thread.Sleep(2000);
         }
 
-        public void editLanguage()
+        public void editLanguage(IWebDriver driver)
         {
             editlanguageTab.Click();
             editlanguageBtn.Click();
@@ -100,7 +100,7 @@ namespace MarsQA_1.ProfilePage
             updateButton.Click();
             Thread.Sleep(1000);
         }
-        public void deleteLanguage()
+        public void deleteLanguage(IWebDriver driver)
         {
             dellanTab.Click();
             Removelang.Click();

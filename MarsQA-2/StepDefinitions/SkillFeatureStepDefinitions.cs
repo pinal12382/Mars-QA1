@@ -13,7 +13,7 @@ namespace MarsQA_1.StepDefinitions
         public void WhenICreateANewSkillAndSkillLevelRecord()
         {
             Manageskill manageskillobj = new Manageskill(driver);
-            manageskillobj.Addskill();
+            manageskillobj.Addskill(driver);
         }
 
         [Then(@"New Skill  and New Skill level record should be created successfully")]
@@ -31,7 +31,7 @@ namespace MarsQA_1.StepDefinitions
         public void WhenIEditANewSkillAndSkillLevelRecord()
         {
             Manageskill manageskillobj = new Manageskill(driver);
-            manageskillobj.editSkill();
+            manageskillobj.editSkill(driver);
 
         }
 

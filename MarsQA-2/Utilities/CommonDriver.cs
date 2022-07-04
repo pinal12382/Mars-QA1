@@ -27,7 +27,7 @@ namespace MarsQA_1.Utilities
             //signInpage object initilization and definition
 
             SignInpage SignInpageobj = new SignInpage(driver);
-            SignInpageobj.addlogindetail();
+            SignInpageobj.addlogindetail(driver);
 
 
         }

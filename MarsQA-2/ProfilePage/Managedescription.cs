@@ -12,10 +12,10 @@ namespace MarsQA_1.ProfilePage
 {
     public class Managedescription
     {
-        IWebDriver driver;
+       public IWebDriver driver;
         // Add Description
 
-        [FindsBy(How = How.XPath,Using="//div/section[2]/div/div/div/div[3]/div/div/div/h3/span/i")]
+        [FindsBy(How = How.XPath,Using= "//div/section[2]/div/div/div/div[3]/div/div/div/h3/span/i")]
         public IWebElement descriptionButton { get; set; }
 
         [FindsBy(How =How.XPath,Using= "//div/section[2]/div/div/div/div[3]/div/div/form/div/div/div[2]/div[1]/textarea")]
@@ -44,7 +44,7 @@ namespace MarsQA_1.ProfilePage
 
 
         }
-        public void addDesc()
+        public void addDesc(IWebDriver driver)
         {
             descriptionButton.Click();
             Thread.Sleep(1000);
@@ -55,7 +55,7 @@ namespace MarsQA_1.ProfilePage
             //Thread.Sleep(2000);
             Wait.ElementIsVisible(driver, "XPath","//div/section[2]/div/div/div/div[3]/div/div/form/div/div/div[2]/button",5);
         }
-        public void editDesc()
+        public void editDesc(IWebDriver driver)
         {
             
             editDescbtn.Click();
@@ -66,7 +66,7 @@ namespace MarsQA_1.ProfilePage
 
         }
 
-        public void delDesc()
+        public void delDesc(IWebDriver driver)
         {
             Thread.Sleep(2000);
             deldescbtn.Click();

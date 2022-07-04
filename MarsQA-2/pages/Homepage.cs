@@ -12,7 +12,8 @@ namespace MarsQA_1.pages
    public class Homepage
     {
               
-           IWebDriver driver;
+         public  IWebDriver driver;
+
         [FindsBy(How = How.XPath, Using = "//div/div/div[1]/div/a")]
         public IWebElement SignInbtn { get; set;}
 
@@ -24,14 +25,18 @@ namespace MarsQA_1.pages
             public void HomePageNavigate()
             {
                 driver.Navigate().GoToUrl("http://localhost:5000/");
+               Thread.Sleep(2000);
                 driver.Manage().Window.Maximize();
+               Thread.Sleep(2000);  
                 
             }
-            public void Signin()
-            {
-            
-            SignInbtn.Click();
+        public void Signin(IWebDriver driver)
+        {
 
-            }
+
+            SignInbtn.Click();
+            Thread.Sleep(2000);
+
+        }
         }
 }

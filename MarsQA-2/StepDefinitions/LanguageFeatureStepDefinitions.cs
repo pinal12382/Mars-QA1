@@ -16,7 +16,7 @@ namespace MarsQA_1.StepDefinitions
         public void WhenICreateANewLanguageAndLanguageLevelRecord()
         { 
             Managelanguage managelanguageobj = new Managelanguage(driver);
-            managelanguageobj.addLanguage();
+            managelanguageobj.addLanguage(driver);
         }
 
         [Then(@"New language  and New language level record should be created successfully")]
@@ -34,7 +34,7 @@ namespace MarsQA_1.StepDefinitions
         public void WhenIEditANewLanguageAndLanguageLevelRecord()
         {
             Managelanguage managelanguageobj = new Managelanguage(driver);
-            managelanguageobj.editLanguage();
+            managelanguageobj.editLanguage(driver);
         }
 
         [Then(@"New edited language and language level record should be edited successfully")]
@@ -52,7 +52,7 @@ namespace MarsQA_1.StepDefinitions
         public void WhenIDeleteALanguageAndLanguageLevelRecord()
         {
             Managelanguage managelanguageobj = new Managelanguage(driver);
-            managelanguageobj.deleteLanguage();
+            managelanguageobj.deleteLanguage(driver);
 
         }
 
